@@ -1,36 +1,31 @@
 #include <bits/stdc++.h>
-#include <string>
 using namespace std;
-
 int main(int argc, char *argv[]) {
-
   string s;
   getline(cin, s);
-
   vector<string> ms;
   string d = "";
-
+  int dmax = -1;
   for (char i : s) {
-    d += i;
     if (i == ' ') {
-      ms.push_back(d);
-      d = "";
+      if (!d.empty()) {
+        ms.push_back(d);
+        dmax = max(dmax, (int)d.size());
+        d = "";
+      }
+    } else {
+      d += i;
     }
   }
-  if (d != " ")
+  if (!d.empty()) {
     ms.push_back(d);
-  // cout << d;
-  /* for (int i = 0; i < ms.size(); i++)
-    cout << ms[i] << " "; */
-  int f = -1;
-  for (string i : ms) {
-    f = max(f, (int)i.size());
+    dmax = max(dmax, (int)d.size());
   }
-  for (string i : ms) {
-    if (i.size() == f) {
-      cout << i << " ";
+  for (int i = 0; i < ms.size(); i++) {
+    if ((int)ms[i].size() == dmax) {
+      cout << ms[i];
+      return 0;
     }
   }
-
   return 0;
 }

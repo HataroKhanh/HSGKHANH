@@ -15,16 +15,26 @@ int main(int argc, char *argv[]) {
   }
   sort(a, a + n, greater<int>());
   int ssum = 0;
-  for (int i = 0; i < k; i++) {
-    ssum += a[i];
-    aa[a[i]] = 1;
-    /* cout << "a[i]";
-    cout << a[i] << " ";
-    cout << '\n'; */
+  if (n > k) {
+    for (int i = 0; i < k; i++) {
+      ssum += a[i];
+      aa[a[i]] = 1;
+      /* cout << "a[i]";
+      cout << a[i] << " ";
+      cout << '\n'; */
+    }
+    /* for (int i : b)
+      cout << i << " ";
+    cout << "\n"; */
+  } else {
+    for (int i = 0; i < n; i++)
+      ssum += a[i];
+    cout << ssum << '\n';
+    for (int i = 0; i < n; i++) {
+      cout << i << " ";
+    }
+    return 1;
   }
-  /* for (int i : b)
-    cout << i << " ";
-  cout << "\n"; */
   cout << ssum << '\n';
   for (int i = 0; i < n; i++) {
     if (aa[b[i]] == 1) {
