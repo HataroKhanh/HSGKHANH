@@ -9,11 +9,6 @@ int caua(vector<int> a,int n,int s)
     a.erase(a.begin()+s);
   }
   return a[s]; 
-6
-}
-int caub(vector<int> a,int n,int s)
-{
-     
 }
 int main()
 {
