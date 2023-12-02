@@ -31,11 +31,14 @@ int main() {
   int n;
   string s;
   cin >> n;
-
+  vector<int> a;
   for (int i = 0; i < n; i++) {
     cin >> s;
     unordered_map<char, int> k = DEMSO(s);
-    cout << TOMAU(s, k);
+    a.push_back(TOMAU(s, k));
+  }
+  for (int &i : a) {
+    cout << i << '\n';
   }
 
   return 0;
