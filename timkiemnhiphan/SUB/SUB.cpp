@@ -16,7 +16,7 @@ int main() {
   int smin = INT_MAX;
 
   for (int i = 0; i < n; i++) {
-    int khanh = lower_bound(b + i, b + n, b[i] + k) - b - i;
+    int khanh = lower_bound(b + i, b + n, b[i] + k) - b;
     if (b[khanh] == b[i] + k && khanh < n) {
       smin = min(smin, khanh - i);
     }

@@ -18,14 +18,8 @@ unordered_map<char, int> DEMSO(string &s) {
 // X>V
 // V>D
 int TOMAU(string &s, unordered_map<char, int> &k) {
-  int smax = max(k['V'], max(k['X'], k['D']));
-  if (smax == k['V']) {
-    return k['X'] + k['D'] * 2;
-  } else if (smax == k['D']) {
-    return k['V'] + k['X'] * 2;
-  } else if (smax == k['X']) {
-    return k['D'] + k['V'] * 2;
-  }
+  return min(k['V'] + k['X'] * 2,
+             min(k['X'] + k['D'] * 2, k['D'] + k['V'] * 2));
 }
 int main() {
   int n;
