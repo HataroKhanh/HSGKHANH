@@ -1,27 +1,25 @@
 #include <bits/stdc++.h>
-#include <iostream>
-#include <string>
 using namespace std;
-int khanh(string b) {
-  int i;
-  for (i = b.size() - 1; i >= 0; i--) {
-    if (b[i] != '0') {
-      break;
+int khanh(int a) {
+  if (a % 10 != 0) {
+    return a % 10;
+  } else {
+    while (1) {
+      a /= 10;
+      if (a % 10 != 0) {
+        return a % 10;
+      }
     }
   }
-  return b[i] - '0';
 }
 int main() {
   int a;
-  int d = 0;
-
   cin >> a;
-  string b = to_string(a);
+  int d = 0;
   while (a != 0) {
-    string b = to_string(a);
-    a -= khanh(b);
-
+    a -= khanh(a);
     d++;
   }
   cout << d;
+  return 0;
 }
