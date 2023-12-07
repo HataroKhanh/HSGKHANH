@@ -8,11 +8,10 @@ unordered_map<char, int> strings(string &s) {
   }
   return a;
 }
-bool istrung(unordered_map<char, int> &s, unordered_map<char, int> a) {
-  for (int i = 0; i < a.size(); i++) {
-    if (s[i] == 0 && a[i] != 0) {
+bool istrung(unordered_map<char, int> &s, unordered_map<char, int> &a) {
+  for (int i = 65; i <= 90; i++) {
+    if (a[char(i)] != 0 && s[char(i)] == 0)
       return false;
-    }
   }
   return true;
 }
