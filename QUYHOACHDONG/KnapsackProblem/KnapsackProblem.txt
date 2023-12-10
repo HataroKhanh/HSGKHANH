@@ -1,0 +1,4 @@
+Bạn có một ba lô có khả năng chứa trọng lượng tối đa W. 
+Có n đồ vật, mỗi đồ vật có trọng lượng và giá trị riêng.
+Hãy chọn một số đồ vật để đưa vào ba lô sao cho tổng giá trị của
+ba lô là lớn nhất mà không vượt quá trọng lượng tối đa.

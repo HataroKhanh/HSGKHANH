@@ -1,80 +1,20 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <iostream>
+#include <unordered_map>
 
-int main()
- {
+int main() {
+  std::unordered_map<int, int> myMap;
 
-   int n,i=0,v,x;
+  // Truy cập khóa không tồn tại, sẽ tạo ra khóa với giá trị 0
+  std::cout << myMap[10] << std::endl; // In ra 0
 
-    cout<<"Enter No-> ";
-    cin>>n;
+  // Thêm hoặc cập nhật phần tử
+  myMap[1] = 2;
+  myMap[2] = 3;
 
-      if(n==0)
-            exit(0);
-      if(n%2!=0)
-            x=n+1;
-      else
-            x=n;
+  // Truy cập và in ra giá trị
+  for (const auto &i : myMap) {
+    std::cout << "Key: " << i.first << ", Value: " << i.second << std::endl;
+  }
 
-      if(n<=5) v = (x-x/2)-1;
-      if(n>5) v = (x-x/2);
-
-   while(i<n)
-     {
-       for(int r=n-i;r>0;r--)
-             cout<<" ";
-       for(int j=0; j<=i*2;j++)
-         {
-            if(i<=v)
-              {
-                if(i==i)
-                cout<<" ";
-              }
-           else
-                cout<<"*";
-         }
-       for(int l=n*2; l>j;l--)
-            cout<<" ";
-
-       for(j=0; j<=i*2;j++)
-         {
-           if(i<=v)
-             {
-               if(i==i)
-                   cout<<" ";
-             }
-           else
-               cout<<"*";
-         }
-       cout<<endl;
-       i++;
-    }
-
-  int j=0;
-  while(j<n-2)
-    {
-      for(int p=0; p<=n*4;p++)
-            cout<<"*";
-
-      cout<<endl;
-      j++;
-    }
-
-  int k=0,s=0;
-  while(k<n*2-2)
-    {
-      for(int r=0;r<k*2;r++)
-           cout<<" ";
-
-      for(int p=n*4; p>=s;p--)
-           if(k==0&&p==n*4||p==0)
-                    cout<<" ";
-           else
-                    cout<<"*";
-          s++; s++;s++;s++;
-
-      cout<<endl;
-      k++;
-    }
- return 0;
- }
+  return 0;
+}

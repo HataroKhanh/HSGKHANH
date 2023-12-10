@@ -1,31 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
-bool ghh(int a) {
-  int k = 0;
-  for (int i = 1; i <= a; i++) {
+
+bool ganhh(long long a) {
+  long long ssum = 0;
+  for (long long i = 1; i * i <= a; i++) {
     if (a % i == 0) {
-      k += i;
+      ssum += i;
+      if (i * i != a) {
+        ssum += a / i;
+      }
     }
   }
-  // cout << k << '\n';
-  return a * 2 <= k;
+  return a * 2 <= ssum;
 }
-int main(int argc, char *argv[]) {
 
-  int n, d = 0;
+int main() {
+  long long n, d = 0;
   cin >> n;
-  int a[n];
+  vector<long long> a;
   for (int i = 0; i < n; i++) {
-    cin >> a[i];
-    if (ghh(a[i]))
+    long long ip;
+    cin >> ip;
+    if (ganhh(ip)) {
       d++;
+      a.push_back(ip);
+    }
   }
   cout << d << '\n';
-  for (int i = 0; i < n; i++) {
-    if (ghh(a[i])) {
-      cout << a[i] << '\n';
-    }
+  for (long long &i : a) {
+    cout << i << '\n';
   }
-
-  return 0;
 }
