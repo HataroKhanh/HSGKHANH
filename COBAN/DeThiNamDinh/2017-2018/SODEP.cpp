@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
+#define ll long long
 using namespace std;
-bool sodep(int a) {
+bool sodep(ll a) {
   int k = 0;
   for (int i = 1; i <= a; i++) {
     if (a % i == 0) {
@@ -11,7 +12,7 @@ bool sodep(int a) {
 }
 int main(int argc, char *argv[]) {
 
-  int a;
+  ll a;
   cin >> a;
   if (sodep(a))
     cout << "CO";
