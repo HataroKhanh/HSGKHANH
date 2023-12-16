@@ -7,7 +7,6 @@ def nt(a):
                 return False
         return True
 n = int(input())
-
 for x in range(0,int(sqrt(n))+1):
     for y in range(x+1,int(sqrt(n))+1):
         z=x**2+y**2
