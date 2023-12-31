@@ -6,7 +6,7 @@ urlname = "https://www.1sttheworld.com/collections/scottish-tartan-hoodie"
 res = requests.get(urlname)
 
 links = []
-for i in range(2,1360):
+for i in range(2,136):
     url = f"https://www.1sttheworld.com/collections/scottish-tartan-hoodie?page={i}"
     res = requests.get(url)
     if res.status_code == 200:
@@ -23,4 +23,8 @@ for i in range(2,1360):
         print("Failed to retrieve the page")
 with open("text.txt",'w') as f:
     for i in links:
-        f.writelines(i)
+        f.write(f"{i}\n")
+        
+
+
+        
