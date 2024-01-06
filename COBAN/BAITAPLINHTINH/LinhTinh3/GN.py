@@ -1,2 +1,5 @@
 a,b,c,d = map(int,input().split())
-print(abs(c-b if b>=c else a-d if a>=d else 0))
+
+l = max(a,c)
+r = min(b,d)
+print(0 if r<l else r-l+1)
