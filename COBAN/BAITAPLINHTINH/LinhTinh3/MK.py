@@ -1,7 +1,20 @@
+import sys
 a,b = map(int,input().split())
-if a==1:print(b)
-else:
-    for i in range(10**a,10**(a-1),-1):
-        if sum([int(i) for i in str(i)]) == b:
-            print(i)
+# 5 12 93000
+
+s=''
+while a>1 and b<=10**a:
+    if b>=9:
+        s+='9'
+        b-=9
+    else:
+        s+=str(b)
+        if len(s)!=a:
+            s+='0'*(a-len(s))
+            print(s)
             break
+    if b>0 and len(s)==a:
+        print(-1)
+        break
+else:
+    print(b)
