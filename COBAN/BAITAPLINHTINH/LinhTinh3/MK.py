@@ -1,7 +1,6 @@
 import sys
 a,b = map(int,input().split())
 # 5 12 93000
-
 s=''
 while a>1 and b<=10**a:
     if b>=9:
