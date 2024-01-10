@@ -1,5 +1,5 @@
 def bacthang(a) -> bool:
-    t=0
+    t=-1
     for i in a:
         if int(i)>=t:
             t=int(i)
