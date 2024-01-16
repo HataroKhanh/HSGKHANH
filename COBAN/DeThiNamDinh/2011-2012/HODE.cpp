@@ -14,7 +14,6 @@ int main()
     sort(k.begin(),k.end(),greater<int>());
     for (int i=0;i<k.size();i+=2)
     {
-        vector<int> 
         s+=k[i]-k[i+1];
     }
     cout<<s;
