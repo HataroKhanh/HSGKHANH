@@ -21,8 +21,7 @@ bool khanh(ll h, ll n, ll m, ll a[]) {
 }
 int main(int argc, char *argv[]) {
   ll n, m, smax = 0;
-  freopen("PINOC.INP", "r", stdin);
-  freopen("PINOC.OUT", "w", stdout);
+
 
   cin >> n >> m;
   ll a[n];

@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
     "files.associations": {
         "iostream": "cpp"
     }
+=======
+    "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe"
+>>>>>>> 30424a07afb4f2d472641b60025b33bc36611ec7
 }
