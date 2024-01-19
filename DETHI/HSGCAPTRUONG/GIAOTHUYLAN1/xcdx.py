@@ -1,12 +1,14 @@
-s = input()
-n = len(s)
-smax = 1
-for i in range(n):
-    l, r = i - 1, i + 1
-    while l >= 0 and r < n and s[l] == s[r]:
-        l -= 1
-        r += 1
-    k = r - l - 1
-    smax = max(smax, k)
-
-print(smax if n%2!=0 else smax+1)
+def rev(s):
+    return s == s[::-1]
+def nmax(S):
+    n = len(S)
+    smax = 0
+    for i in range(n):
+        for j in range(i, n):
+            s = S[i:j+1]
+            if rev(s) and len(s) > smax:
+                smax = len(s)
+    return smax
+S = input().strip()
+r = nmax(S)
+print(str(r))
