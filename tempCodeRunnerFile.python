@@ -1,1 +1,3 @@
-eval(input())
+a = "khanh"
+a=a.replace('h','')
+print(a)
