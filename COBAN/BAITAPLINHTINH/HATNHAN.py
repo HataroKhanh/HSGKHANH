@@ -10,11 +10,17 @@ def uoc(s):
 def hai(s):
     a = uoc(s)
     n = len(s)
-    b= []
     for i in a:
-        if i*(n//len(i))==s:
-            b.append(i) 
-    return min(b)
+        for j in range(0,n+1,a[i]):
+            check = True
+            if not a[i]==s[j:a[i]+1]:
+                check = False   
+                continue
+            if check:
+                return a[i]
 n = int(input())
+ss = []
 for i in range(n):
-    print(hai(input()))
+    ip = input()
+    ss.append(ip)
+for i in ip:
