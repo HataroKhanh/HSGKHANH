@@ -1,26 +1,21 @@
+'abababab'
 def uoc(s):
     n = len(s)
     a = []
     for i in range(1,int(n**0.5)+1):
         if n%i==0:
-            a.append(s[0:i])
-            if n!=i*i:
-                a.append(s[0:n//i])
-    return a
-def hai(s):
+            a.append(i)
+            if i*i!=n:
+                a.append(n//i)
+    return sorted(a)
+def schar(s):
     a = uoc(s)
+    b = []
     n = len(s)
     for i in a:
-        for j in range(0,n+1,a[i]):
-            check = True
-            if not a[i]==s[j:a[i]+1]:
-                check = False   
-                continue
-            if check:
-                return a[i]
+        if (s[:i]*(n//i))==s:
+            return s[:i]
 n = int(input())
-ss = []
 for i in range(n):
     ip = input()
-    ss.append(ip)
-for i in ip:
+    print(schar(ip))
