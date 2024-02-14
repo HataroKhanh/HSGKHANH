@@ -15,24 +15,22 @@ bool nt(ll n){
 	}
 	return true;
 }
-int main(int argc, char const *argv[])
+int main()
 {
 	cin>>n;
 	for ( ll i=1;i<=n;i++) cin>>a[i];
 	for ( ll i=1;i<=n;i++) b[i] = a[i] +b[i-1];
 	
-	while (j <= n) {
-		cout<<i<<' '<<j<<'\n';
-	    if (nt(b[j] - b[i - 1])) {
-	        dmax = max(dmax, j - i + 1);
-	        j++;
-	    } 
-	    else {
-	        if (i<j) i++;
-	        else j++ ;
-	    }
-
-	}
+	for (ll i=1;i<=n;i++)
+	{
+		for (ll j=i;j<=n;j++)
+		{
+			if (nt(b[j]-b[i-1]))
+			{
+				dmax = max(dmax,j-i+1);
+			}
+		}
+	}	
 	cout<<dmax;
 	return 0;
 }

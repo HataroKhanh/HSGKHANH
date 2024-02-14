@@ -1,11 +1,15 @@
-max_range = int(10e5)  # Limiting the range to 10^5 for faster computation
+def tach_chuoi(chuoi):
+    ket_qua = []
+    do_dai = len(chuoi)
+    d=0
+    for i in range(1, do_dai + 1):
+        for j in range(do_dai - i + 1):
+            ket_qua.append(chuoi[j:j+i])
+            d+=1
 
-for i in range(2, max_range + 1):
-    d = 1  # Start from 1 as every number is divisible by 1
-    for j in range(2, int(i ** 0.5) + 1):
-        if i % j == 0:
-            d += j
-            if i // j != j:  # Avoid adding the square root twice
-                d += i // j
-    if d == i:
-        print(i)
+    return (ket_qua,d)
+import math
+chuoi_input = "12345"
+ket_qua = tach_chuoi(chuoi_input)
+print(math.factorial(5))
+print(ket_qua)

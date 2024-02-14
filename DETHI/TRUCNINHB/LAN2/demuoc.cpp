@@ -2,7 +2,7 @@
 using namespace std;
 #define ll long long
 ll n,ip,le=0,chan=0;
-ll uoc(ll ip)
+ll uoc(ll &ip)
 {
 	ll d = 0;
 	for ( ll i=1;i*i<=n;i++)
@@ -17,7 +17,6 @@ ll uoc(ll ip)
 		}
 	}
 	return d;
-
 }
 int main(int argc, char const *argv[])
 {
@@ -26,8 +25,8 @@ int main(int argc, char const *argv[])
 	{
 		cin>>ip;
 		ll kq = uoc(ip);
-		if (kq%2==0) chan++;
-		else le++;
+		if (kq%2==0) {chan++;}
+		else {le++;}
 	}
 	cout<<chan<<'\n'<<le;
 	return 0;
