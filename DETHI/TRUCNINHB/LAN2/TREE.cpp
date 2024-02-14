@@ -17,6 +17,8 @@ bool nt(ll n){
 }
 int main()
 {
+	freopen("TREE.INP","r",stdin);
+	freopen("TREE.OUT","w",stdout);
 	cin>>n;
 	for ( ll i=1;i<=n;i++) cin>>a[i];
 	for ( ll i=1;i<=n;i++) b[i] = a[i] +b[i-1];

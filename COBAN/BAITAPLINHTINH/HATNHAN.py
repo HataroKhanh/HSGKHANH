@@ -1,4 +1,5 @@
 'abababab'
+import sys
 def uoc(s):
     n = len(s)
     a = []
@@ -15,6 +16,8 @@ def schar(s):
     for i in a:
         if (s[:i]*(n//i))==s:
             return s[:i]
+sys.stdin = open("HATNHAN.INP","r")
+sys.stdout = open("HATNHAN.OUT", "w")
 n = int(input())
 for i in range(n):
     ip = input()
