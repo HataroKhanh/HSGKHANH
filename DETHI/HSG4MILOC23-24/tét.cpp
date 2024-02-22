@@ -1,19 +1,38 @@
-#include <iostream>
-#include <set>
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+const ll smax = 1e6;
+ll n,BIT[smax],a[smax],x,y;
+map<int,int> compress;
+void update(ll i,ll d)
+{
+    while (i<=n)
+    {
+        BIT[i]+=d;
+        i+= i & (-i);
+    }
+}
 
-int main() {
-    std::set<int> mySet = {1, 2, 3, 4, 5};
-
-    int valueToFind = 3;
-
-    // Sử dụng hàm count để kiểm tra sự xuất hiện của giá trị trong set
-    int count = mySet.count(valueToFind);
-
-    if (count > 0) {
-        std::cout << "Giá trị " << valueToFind << " xuất hiện trong set." << std::endl;
-    } else {
-        std::cout << "Giá trị " << valueToFind << " không xuất hiện trong set." << std::endl;
+ll query(ll i)
+{
+    ll ssum = 0;
+    while (i>0)
+    {
+        ssum += BIT[i];
+        i -= i & (-i);
+    }       
+    return ssum;
+}
+int main(int argc, char const *argv[])
+{
+    cin>>n;
+    for (ll i=1;i<=n;i++){
+        cin>>x>>y;
+        compress[i] = x;
+        update(i,y);
     }
 
-    return 0;
+    for (auto i:compress)
+        cout<<i.first<<i.second<<' ';
+
 }
