@@ -9,8 +9,10 @@ def nt(n):
 n = (input())
 num = re.findall(r'\d+',n)
 dmax = 0
+sdem  = 0
 for i in num:
+    sdem += len(i)
     if nt(int(i)):
         dmax = max(dmax,int(i))
-print(len(num))
+print(sdem)
 print(dmax)
