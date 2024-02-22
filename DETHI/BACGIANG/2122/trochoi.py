@@ -1,15 +1,13 @@
 n = int(input())
-a = sorted(list(map(int,input().split())))
-b = sorted(list(map(int,input().split())))
-
-i,j = 0,0
-ssum = 0
-while i<n and j<n:
-	ssum  = abs(a[i]+b[j])
-	if i!=n-1 and abs(a[i+1]+b[j])<ssum:
-		i+=1
-	elif j!=n-1 and abs(a[i]+b[j+1])<ssum:
-		j+=1
+a = [0]+sorted(list(map(int,input().split())))
+b = [0] +sorted(list(map(int,input().split())))
+i,j = 1,n
+ssum = float('inf')
+while i<=n and j>0:
+	ssum  = min(abs(a[i]+b[j]),ssum)
+	if ssum == 0:break
+	if (a[i]+b[j]>0):
+		j-=1
 	else:
-		break
+		i+=1
 print(ssum)
