@@ -1,18 +1,11 @@
-def khanh(a,n,k,m):
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
+ssum = float("inf")
+for i in range(n):
     d = 0
-    s = 0
-    v = m*2
-    check = True
-    for i in a:
-        if check:
-            v = i+m*2
-            check = False
-        if i==v:
-            d+=1
-            check = True
-        elif i>v:
-            i-=1
-            d+=1
-            check = True
+    for j in range(i, n):
+        d = max(d, sum(a[i : j + 1]))
+        print(a[i : j + 1])
     print(d)
-print(khanh([1,2,3,4,5],5,2,3))
+    ssum = min(ssum, d)
+print(ssu
