@@ -14,7 +14,10 @@ for i in range(n):
         d += 1
     if (s - k)%k in f:
         d += f[(s-k)%k]
+    
+
     f[s%k] += 1
+
 print(d)
 
 
